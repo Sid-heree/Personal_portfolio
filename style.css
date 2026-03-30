@@ -143,17 +143,6 @@ section {
 .home-content {
   flex: 1;
 }
-.home-badge {
-  background: rgba(249, 115, 22, 0.12);
-  display: inline-block;
-  padding: 0.3rem 1rem;
-  border-radius: 40px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent-orange);
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(249,115,22,0.3);
-}
 .home-content h1 {
   font-size: 4.2rem;
   font-weight: 800;
@@ -230,13 +219,12 @@ section {
 .home-img {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* 👉 shift right */
-  padding-right: 40px; /* 👉 control right spacing */
+  justify-content: flex-end;
+  padding-right: 40px;
 }
 
-/* Container (slightly bigger) */
 .img-glow {
-  width: 440px;   /* 🔥 increased size */
+  width: 440px;
   height: 440px;
   border-radius: 30%;
   overflow: hidden;
@@ -244,7 +232,6 @@ section {
   transition: 0.4s ease;
 }
 
-/* Image */
 .img-glow img {
   width: 100%;
   height: 100%;
@@ -253,7 +240,6 @@ section {
   transition: 0.4s ease;
 }
 
-/* 🔥 Balanced glow (not too much, not too less) */
 .img-glow::before {
   content: "";
   position: absolute;
@@ -271,7 +257,6 @@ section {
   transition: 0.4s ease;
 }
 
-/* Border (slightly stronger) */
 .img-glow::after {
   content: "";
   position: absolute;
@@ -280,23 +265,20 @@ section {
   border: 1.8px solid rgba(249,115,22,0.3);
 }
 
-/* Hover (smooth premium feel) */
 .img-glow:hover {
   transform: translateY(-8px) scale(1.03);
 }
 
-/* Glow boost */
 .img-glow:hover::before {
   opacity: 1;
   filter: blur(32px);
 }
 
-/* Image zoom */
 .img-glow:hover img {
   transform: scale(1.04);
 }
 
-/* ABOUT SECTION - REDESIGNED */
+/* ABOUT SECTION */
 .about {
   background: var(--bg-surface);
   position: relative;
@@ -311,18 +293,6 @@ section {
 .about-header {
   text-align: center;
   margin-bottom: 4rem;
-}
-
-.section-tag {
-  display: inline-block;
-  background: rgba(249, 115, 22, 0.12);
-  padding: 0.4rem 1.2rem;
-  border-radius: 40px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent-orange);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
 }
 
 .about-header .heading {
@@ -438,17 +408,6 @@ section {
   margin: 0;
 }
 
-.timeline-badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  background: rgba(249, 115, 22, 0.2);
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  margin-top: 0.5rem;
-  color: #ffaa66;
-}
-
-/* Quote Card */
 .about-quote-card {
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), rgba(0, 0, 0, 0.3));
   border-radius: 2rem;
@@ -528,7 +487,7 @@ section {
   cursor: pointer;
 }
 
-/* SKILLS modern grid */
+/* SKILLS SECTION */
 .skills {
   background: var(--bg-dark);
 }
@@ -551,10 +510,13 @@ section {
   background: #111;
   box-shadow: 0 15px 25px -12px rgba(249,115,22,0.2);
 }
-.skill-icon i {
+.skill-icon i,
+.skill-icon .devicon-python-plain,
+.skill-icon .devicon-scikitlearn-plain {
   font-size: 3.2rem;
   color: var(--accent-orange);
   margin-bottom: 1rem;
+  display: inline-block;
 }
 .skills-card h4 {
   font-size: 1.5rem;
@@ -565,31 +527,37 @@ section {
   color: #a0a0a0;
 }
 
-/* CERTIFICATES grid */
+/* CERTIFICATES SECTION */
 .certificates {
   background: var(--bg-surface);
 }
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* 🔥 bigger cards */
-  gap: 2.5rem; /* more spacing */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
-/* Bigger image area */
+.cert-item {
+  background: #0e0e0e;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  border: 1px solid #2a2a2a;
+  cursor: pointer;
+}
+
 .cert-front {
   position: relative;
-  height: 220px; /* 🔥 increased height */
+  height: 220px;
   overflow: hidden;
 }
 
-/* Slight zoom on hover (premium feel) */
 .cert-item:hover {
   transform: translateY(-6px) scale(1.02);
   border-color: var(--accent-orange);
   box-shadow: 0 12px 25px rgba(249,115,22,0.15);
 }
 
-/* Image zoom smoother */
 .cert-front img {
   width: 100%;
   height: 100%;
@@ -608,6 +576,7 @@ section {
   border-radius: 30px;
   padding: 5px 8px;
   font-size: 1rem;
+  color: #111;
 }
 .cert-info {
   padding: 1.2rem;
@@ -621,7 +590,7 @@ section {
   color: #bcbcbc;
 }
 
-/* PROJECTS */
+/* PROJECTS SECTION */
 .projects {
   background: var(--bg-dark);
 }
@@ -645,15 +614,6 @@ section {
   width: 100%;
   height: 200px;
   object-fit: cover;
-}
-.coming-soon {
-  background: #1f1f1f;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  color: var(--accent-orange);
 }
 .project-info {
   padding: 1.5rem;
@@ -679,7 +639,7 @@ section {
   gap: 10px;
 }
 
-/* CONTACT SECTION - COMPLETE & FIXED */
+/* CONTACT SECTION */
 .contact {
   background: var(--bg-surface);
 }
@@ -805,11 +765,6 @@ section {
 .footer-logo .logo {
   font-size: 1.6rem;
 }
-.footer-logo p {
-  font-size: 0.8rem;
-  color: #888;
-  margin-top: 0.3rem;
-}
 .footer-nav {
   display: flex;
   gap: 2rem;
@@ -844,7 +799,49 @@ section {
   color: #f97316;
 }
 
-/* RESPONSIVE */
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn:active,
+.gradient-btn:active {
+  transform: scale(0.96);
+}
+
+.navbar {
+  transition: all 0.35s ease;
+}
+
+.navbar.active {
+  animation: slideDown 0.35s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-card:active,
+.project-card:active,
+.cert-item:active {
+  transform: scale(0.97);
+}
+
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   section {
     padding: 6rem 5%;
@@ -888,6 +885,7 @@ section {
     width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   #menu-icon {
     display: block;
@@ -938,145 +936,59 @@ section {
   .footer-nav {
     justify-content: center;
   }
-.skill-icon {
-  font-size: 3rem;
-  color: #ff7a18;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.skill-icon img{
-  width: 3rem;
-  height: 3rem;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(55%) sepia(91%) saturate(900%) hue-rotate(350deg);
-}
-}
-/* 🔥 SMOOTH BASE */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* 🔥 ANIMATIONS */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 🔥 BUTTON PRESS EFFECT (mobile feel) */
-.btn:active,
-.gradient-btn:active {
-  transform: scale(0.96);
-}
-
-/* 🔥 NAVBAR MOBILE ANIMATION */
-.navbar {
-  transition: all 0.35s ease;
-}
-
-.navbar.active {
-  animation: slideDown 0.35s ease forwards;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 🔥 CARD TOUCH FEEDBACK */
-.skills-card:active,
-.project-card:active,
-.cert-item:active {
-  transform: scale(0.97);
-}
-
-/* 🔥 HERO IMAGE FIX */
 @media (max-width: 480px) {
   .img-glow {
     width: 260px;
     height: 260px;
     margin: 0 auto;
   }
-
   .home-img {
     justify-content: center;
     padding-right: 0;
   }
-}
-
-/* 🔥 MOBILE IMPROVEMENTS */
-@media (max-width: 480px) {
-
   section {
     padding: 5rem 6%;
   }
-
   .home {
     text-align: center;
   }
-
   .home-content h1 {
     font-size: 2.2rem;
   }
-
   .home-content h3 {
     font-size: 1.2rem;
   }
-
   .home-content p {
     font-size: 0.9rem;
   }
-
   .btn-group {
     flex-direction: column;
     gap: 0.8rem;
   }
-
   .btn {
     width: 100%;
   }
-
   .skills-container,
   .projects-container,
   .cert-grid {
     grid-template-columns: 1fr;
   }
-
   .cert-front {
     height: 180px;
   }
-
   .contact-container {
     padding: 1.5rem;
   }
-
   .contact-left .heading {
     font-size: 2rem;
   }
-
   .footer {
     padding: 2rem 6%;
   }
 }
 
-/* 🔥 PERFORMANCE (ANDROID FRIENDLY) */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
